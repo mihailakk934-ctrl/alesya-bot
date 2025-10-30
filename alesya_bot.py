@@ -210,7 +210,7 @@ def main():
    # Ежедневные сообщения
     job_queue.run_daily(send_morning_message, time=datetime.time(hour=7, minute=0))  # 07:00
     job_queue.run_daily(send_daily_message, time=datetime.time(hour=12, minute=0))   # 12:00
-    job_queue.run_daily(send_evening_message, time=datetime.time(hour=22, minute=0)) # 22:00
+    job_queue.run_daily(send_evening_message, time=datetime.time(hour=0, minute=0)) # 22:00
     
     # Случайные сюрпризы 3 раза в день (каждые 8 часов)
     job_queue.run_repeating(send_random_surprise, interval=28800, first=10)  # 28800 секунд = 8 часов
@@ -236,6 +236,7 @@ if __name__ == '__main__':
 if __name__ == '__main__':
 
     main()
+
 
 
 
