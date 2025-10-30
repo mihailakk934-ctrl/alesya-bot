@@ -7,7 +7,7 @@ import random
 import asyncio
 
 # 🔧 НАСТРОЙКИ ИЗ ПЕРЕМЕННЫХ ОКРУЖЕНИЯ
-BOT_TOKEN = os.environ['BOT_TOKEN']  # Берем из переменных окружения
+BOT_TOKEN = os.environ.get('BOT_TOKEN', "8453101752:AAHrrySbI3EkDtv0YK-ICwo-4iOnteBip_k")
 ALESYA_CHAT_ID = "1683043954"
 YOUR_CHAT_ID = "907066358"
 START_DATE = datetime.datetime(2025, 1, 10)
@@ -19,8 +19,6 @@ logging.basicConfig(
 
 # Импортируем функции из messages.py
 from messages import get_daily_message, get_surprise_message, get_compliment, get_secret_message, get_special_message, get_morning_message, get_evening_message
-
-# ... остальной код БЕЗ ИЗМЕНЕНИЙ ...
 
 # Создаем клавиатуру с кнопками
 def get_main_keyboard():
@@ -233,5 +231,9 @@ def main():
     application.run_polling()
 
 if __name__ == '__main__':
+    main()
+
+if __name__ == '__main__':
 
     main()
+
